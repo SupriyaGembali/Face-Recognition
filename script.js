@@ -21,7 +21,8 @@ async function start() {
   //Creating container to display the 
   //Canvas which holds Resultant Marked Image
   
-
+  const div = document.getElementById('cont');
+  div.textContent = 'loading'; //loading is displayed on UI
   const container = document.createElement('div')
   container.style.position = 'relative'
   document.body.append(container)
@@ -36,7 +37,7 @@ async function start() {
   //After Loading all our models and Labling images
   //"Loaded" gets displayed on UI
 
-  document.body.append('Loaded')
+   div.textContent = 'loaded';
 
   
   //Function EventListener for image Upload to specify the tasks
