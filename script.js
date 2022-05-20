@@ -111,8 +111,7 @@ function loadLabeledImages() {
 
   //To add a new face , Enter the new person's 
   //name in this array and His/her face in labled_images Folder.
-  
-  const labels = ['Black Widow', 'Captain America', 'Captain Marvel', 'Hawkeye', 'Jim Rhodes', 'Thor', 'Tony Stark']
+ const labels = ['Gopi', 'Hema', 'Pranay', 'Pujitha', 'Siddharth', 'Jashwanth', 'Kiran']
 
   //Label Images According to Their Names 
 
