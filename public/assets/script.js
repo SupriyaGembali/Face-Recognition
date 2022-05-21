@@ -8,9 +8,9 @@ Models that we use in the project using Promise.all
 */
 
 Promise.all([
-  faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
-  faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
-  faceapi.nets.ssdMobilenetv1.loadFromUri('/models')
+  faceapi.nets.faceRecognitionNet.loadFromUri('./assets/models'),
+  faceapi.nets.faceLandmark68Net.loadFromUri('./assets/models'),
+  faceapi.nets.ssdMobilenetv1.loadFromUri('./assets/models')
 ]).then(start)
 
 //Definition of start function
@@ -127,7 +127,7 @@ function loadLabeledImages() {
 
         //Finding descriptions of ith person from labels list.
 
-        const img = await faceapi.fetchImage(`./labeled_images/${label}/${i}.jpg`)
+        const img = await faceapi.fetchImage(`./assets/labeled_images/${label}/${i}.jpg`)
         const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
 
         //Pushing the descriptions into descriptions array.
