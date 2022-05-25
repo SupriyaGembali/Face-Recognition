@@ -19,7 +19,7 @@ const passport = require('passport');
 require('./auth');
 
 
-
+//Login Checker for authentication
 function isLoggedIn(req, res, next) {
   req.user ? next() : res.sendStatus(401);
 }
@@ -33,6 +33,7 @@ app.get('/', (req, res) => {
   res.send('<a href="/auth/google">Authenticate with Google</a>');
 });
 
+
 app.get('/auth/google',
   passport.authenticate('google', { scope: [ 'email', 'profile' ] }
 ));
@@ -44,16 +45,19 @@ app.get( '/auth/google/callback',
   })
 );
 
+//Path for protected route which allow access to index page
 app.get('/protected', isLoggedIn, (req, res) => {
   res.render('index');
 });
 
+//Logout Route to logout the user
 app.get('/logout', (req, res) => {
   req.logout();
   req.session.destroy();
   res.send('Goodbye!');
 });
 
+//Route to access logout failure page
 app.get('/auth/google/failure', (req, res) => {
   res.send('Failed to authenticate..');
 });
