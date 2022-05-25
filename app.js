@@ -30,7 +30,7 @@ app.use(passport.session());
 
 //creating a route if this route is visited it shows a link to login
 app.get('/', (req, res) => {
-  res.send('<a href="/auth/google">Authenticate with Google</a>');
+  res.render('home');
 });
 
 
