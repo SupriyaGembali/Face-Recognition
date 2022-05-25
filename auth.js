@@ -2,8 +2,10 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth2').Strategy;
 
+
 const GOOGLE_CLIENT_ID = '426354452268-498jicuhcj82ut24vat2m6s55ap8nokp.apps.googleusercontent.com';
 const GOOGLE_CLIENT_SECRET = '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';
+
 
 passport.use(new GoogleStrategy({
   clientID: GOOGLE_CLIENT_ID,
@@ -11,9 +13,14 @@ passport.use(new GoogleStrategy({
   callbackURL: "http://localhost:3000/auth/google/callback",
   passReqToCallback: true,//middleware funtion
 },
+                   
+                                
+                                
 function(request, accessToken, refreshToken, profile, done) {
   return done(null, profile);
 }));
+
+
 
 //used to serialize the user for the session
 passport.serializeUser(function(user, done) {
