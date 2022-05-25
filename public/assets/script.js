@@ -1,6 +1,11 @@
 //Loading the uploaded image into constant imageUpload 
 
 const imageUpload = document.getElementById('imageUpload')
+document.getElementById("imageUpload").style.display="none";
+
+
+
+
 
 /*
 Ensuring Synchronous loading of different 
@@ -13,6 +18,42 @@ Promise.all([
   faceapi.nets.ssdMobilenetv1.loadFromUri('./assets/models')
 ]).then(start)
 
+document.getElementById('myTable').innerHTML = '';
+
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+          $('#imageResult')
+              .attr('src', e.target.result);
+      };
+      reader.readAsDataURL(input.files[0]);
+  }
+}
+
+$(function () {
+  $('#upload').on('change', function () {
+      readURL(input);
+  });
+});
+
+/*  ==========================================
+  SHOW UPLOADED IMAGE NAME
+* ========================================== */
+var input = document.getElementById( 'imageUpload' );
+var infoArea = document.getElementById( 'upload-label' );
+
+input.addEventListener( 'change', showFileName );
+function showFileName( event ) {
+var input = event.srcElement;
+var fileName = input.files[0].name;
+infoArea.textContent = 'File name: ' + fileName;
+}
+
+
+
 //Definition of start function
 
 async function start() { 
@@ -22,7 +63,7 @@ async function start() {
   //Canvas which holds Resultant Marked Image
   
   const div = document.getElementById('cont');
-  div.textContent = 'loading'; //loading is displayed on UI
+  div.textContent = 'Please wait!';
   const container = document.createElement('div')
   container.style.position = 'relative'
   document.body.append(container)
@@ -37,12 +78,12 @@ async function start() {
   //After Loading all our models and Labling images
   //"Loaded" gets displayed on UI
 
-   div.textContent = 'loaded';
-
+  div.textContent = 'Now you can upload image';
   
   //Function EventListener for image Upload to specify the tasks
   //That should be executed when image is uploaded.
   
+  {document.getElementById("imageUpload").style.display="block";}
 
   imageUpload.addEventListener('change', async () => {
     
@@ -55,9 +96,8 @@ async function start() {
     
     image = await faceapi.bufferToImage(imageUpload.files[0])
 
-    //Displaying Uploaded image in UI
 
-    container.append(image)
+    //container.append(image)
 
     //Creating a canvas to display resultant 
     //marked image with rectangles around faces
@@ -97,7 +137,73 @@ async function start() {
       //Drawing Boxes around the detected Face
 
       const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() })
-      drawBox.draw(canvas)
+
+
+
+
+      i=0
+      var name='';
+      while(result.toString()[i] != ' ')
+      {
+        console.log(result.toString()[i]);
+        name = name.concat(result.toString()[i]);
+        i++;
+      }
+      //drawBox.draw(canvas)
+
+
+      i=0
+      var acc='';
+      while(result.toString()[i] != '(')
+      {
+        i++;
+      }
+      i++;
+      while(result.toString()[i] != ')')
+      {
+        acc = acc.concat(result.toString()[i]);
+        i++;
+      }
+
+      if (img) img.remove()
+      if (table) table.remove()
+
+
+      console.log(name);
+      
+
+      if (name != 'unknown')
+      {
+       
+      var img = document.createElement("img");
+      img.src = `./labeled_images/${name}/${1}.jpg`
+      var src = document.getElementById("header");
+      //src.appendChild(img);
+      
+
+
+      
+      var table = document.getElementById("myTable");
+      var row = table.insertRow(0);
+      var row1 = table.insertRow(1);
+      var row2 = table.insertRow(2);
+
+
+      var cell1 = row.insertCell(0);
+      var cell2 = row1.insertCell(0);
+      var cell3 = row2.insertCell(0);
+
+      cell1.innerHTML = "Name found in the records is " +  name;
+      cell2.innerHTML = "Accuracy of findings is " + acc;
+      
+      a="You can find more images from our records here"
+      cell3.innerHTML = a.link(`http://localhost:3000/labeled_images/${name}`);
+
+
+
+
+      
+      }
     })
   })
 }
