@@ -96,8 +96,6 @@ async function start() {
     image = await faceapi.bufferToImage(imageUpload.files[0])
 
 
-    //container.append(image)
-
     //Creating a canvas to display resultant 
     //marked image with rectangles around faces
 
@@ -128,17 +126,11 @@ async function start() {
 
     const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor))
 
-    //Drawing Boxes around found
-
-    results.forEach((result, i) => {
-      const box = resizedDetections[i].detection.box
-
-      //Drawing Boxes around the detected Face
-
-      const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() })
+      results.forEach((result, i) => {
+     
 
 
-
+     //storing name of detected person in variable name
 
       i=0
       var name='';
@@ -148,27 +140,10 @@ async function start() {
         name = name.concat(result.toString()[i]);
         i++;
       }
-      //drawBox.draw(canvas)
-
-
-      i=0
-      var acc='';
-      while(result.toString()[i] != '(')
-      {
-        i++;
-      }
-      i++;
-      while(result.toString()[i] != ')')
-      {
-        acc = acc.concat(result.toString()[i]);
-        i++;
-      }
+  
 
       if (img) img.remove()
       if (table) table.remove()
-
-
-      console.log(name);
       
 
       if (name != 'unknown')
@@ -181,7 +156,7 @@ async function start() {
       
       //to clear previous results
       document.getElementById('myTable').innerHTML = '';
-      
+      //inserting results into table
       var table = document.getElementById("myTable");
       var row = table.insertRow(0);
       var row1 = table.insertRow(1);
@@ -195,10 +170,7 @@ async function start() {
       cell1.innerHTML = "Name found in the records is " +  name;
       
       
-      a="You can find more images from our records here"
-      cell3.innerHTML = a.link(`labeled_images/${name}`);
-
-
+    
 
 
       
