@@ -3,10 +3,6 @@
 const imageUpload = document.getElementById('imageUpload')
 document.getElementById("imageUpload").style.display="none";
 
-
-
-
-
 /*
 Ensuring Synchronous loading of different 
 Models that we use in the project using Promise.all
@@ -18,9 +14,10 @@ Promise.all([
   faceapi.nets.ssdMobilenetv1.loadFromUri('./assets/models')
 ]).then(start)
 
+//Emptying previous results
 document.getElementById('myTable').innerHTML = '';
 
-
+//displaying the uploaded image
 function readURL(input) {
   if (input.files && input.files[0]) {
       var reader = new FileReader();
@@ -38,6 +35,8 @@ $(function () {
       readURL(input);
   });
 });
+
+
 
 /*  ==========================================
   SHOW UPLOADED IMAGE NAME
@@ -63,7 +62,7 @@ async function start() {
   //Canvas which holds Resultant Marked Image
   
   const div = document.getElementById('cont');
-  div.textContent = 'Please wait!';
+  div.textContent = 'Models are loading...Please Wait !!';
   const container = document.createElement('div')
   container.style.position = 'relative'
   document.body.append(container)
@@ -76,9 +75,9 @@ async function start() {
   let canvas
 
   //After Loading all our models and Labling images
-  //"Loaded" gets displayed on UI
+  //Message gets displayed on UI to upload image
 
-  div.textContent = 'Now you can upload image';
+  div.textContent = 'You can upload image now';
   
   //Function EventListener for image Upload to specify the tasks
   //That should be executed when image is uploaded.
@@ -178,10 +177,10 @@ async function start() {
       var img = document.createElement("img");
       img.src = `./labeled_images/${name}/${1}.jpg`
       var src = document.getElementById("header");
-      //src.appendChild(img);
+     
       
-
-
+      //to clear previous results
+      document.getElementById('myTable').innerHTML = '';
       
       var table = document.getElementById("myTable");
       var row = table.insertRow(0);
@@ -194,11 +193,29 @@ async function start() {
       var cell3 = row2.insertCell(0);
 
       cell1.innerHTML = "Name found in the records is " +  name;
-      cell2.innerHTML = "Accuracy of findings is " + acc;
+      
       
       a="You can find more images from our records here"
-      cell3.innerHTML = a.link(`http://localhost:3000/labeled_images/${name}`);
+      cell3.innerHTML = a.link(`labeled_images/${name}`);
 
+
+
+
+      
+      }
+      else{
+
+        var table = document.getElementById("myTable");
+        var row = table.insertRow(0);
+        var row1 = table.insertRow(1);
+        var row2 = table.insertRow(2);
+  
+  
+        var cell1 = row.insertCell(0);
+        var cell2 = row1.insertCell(0);
+        var cell3 = row2.insertCell(0);
+  
+        cell1.innerHTML = "Face not found in our records" ;
 
 
 
