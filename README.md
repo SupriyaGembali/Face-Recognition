@@ -22,7 +22,7 @@ This project is being developed for Microsoft Engage 2022 mentorship program. Th
   * Write the following command and press enter.
   
   ```
-    $ git clone https://github.com/hkaur008/microsoft-engage-project.git
+    $ git clone gh repo clone SupriyaGembali/Face-Recognition
   ```
     
  #### 2. Install node packages
