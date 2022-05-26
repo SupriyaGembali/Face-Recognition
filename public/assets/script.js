@@ -74,13 +74,13 @@ async function start() {
   let image
   let canvas
 
-  //After Loading all our models and Labling images
-  //Message gets displayed on UI to upload image
+ /*After Loading all our models and Labling images
+   Message gets displayed on UI to upload image*/
 
   div.textContent = 'You can upload image now';
   
-  //Function EventListener for image Upload to specify the tasks
-  //That should be executed when image is uploaded.
+  /*Function EventListener for image Upload to specify the tasks
+    That should be executed when image is uploaded*/
   
   {document.getElementById("imageUpload").style.display="block";}
 
@@ -111,9 +111,9 @@ async function start() {
     faceapi.matchDimensions(canvas, displaySize)
 
     
-    //Finding all face detections from the uploaded photo by 
-    //the model by considering FAce Landmarks and Face 
-    //Descriptors
+    /*Finding all face detections from the uploaded photo by 
+    the model by considering FAce Landmarks and Face 
+    Descriptors*/
     
 
     const detections = await faceapi.detectAllFaces(image).withFaceLandmarks().withFaceDescriptors()
@@ -154,7 +154,7 @@ async function start() {
       var src = document.getElementById("header");
      
       
-      //to clear previous results
+      //to clear previous results(if any)
       document.getElementById('myTable').innerHTML = '';
       //inserting results into table
       var table = document.getElementById("myTable");
@@ -202,12 +202,11 @@ async function start() {
 
 function loadLabeledImages() {
 
-  //Loading Names of all the locally saved faces
-  //in labled_images folder into an array "lables"
-
-  //To add a new face , Enter the new person's 
-  //name in this array and His/her face in labled_images Folder.
- const labels = ['Gopi', 'Hema', 'Pranay', 'Pujitha', 'Siddharth', 'Jashwanth', 'Kiran']
+  /*Loading Names of all the locally saved faces
+  in labled_images folder into an array "lables"
+  To add a new face , Enter the new person's 
+  name in this array and His/her face in labled_images Folder*/
+  const labels = ['Gopi', 'Hema', 'Pranay', 'Pujitha', 'Siddharth', 'Jashwanth', 'Kiran']
 
   //Label Images According to Their Names 
 
