@@ -30,7 +30,7 @@ app.use(passport.session());
 
 //creating a route if this route is visited it shows a link to login
 app.get('/', (req, res) => {
-  res.render('home');
+  res.render('authenticate');
 });
 
 
@@ -40,7 +40,7 @@ app.get('/auth/google',
 
 app.get( '/auth/google/callback',
   passport.authenticate( 'google', {
-    successRedirect: '/protected',
+    successRedirect: '/home',
     failureRedirect: '/auth/google/failure'
   })
 );
