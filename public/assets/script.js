@@ -2,6 +2,7 @@
 
 const imageUpload = document.getElementById('imageUpload')
 document.getElementById("imageUpload").style.display="none";
+document.getElementById("whiteBox").style.display="none";
 
 /*
 Ensuring Synchronous loading of different 
@@ -82,7 +83,9 @@ async function start() {
   /*Function EventListener for image Upload to specify the tasks
     That should be executed when image is uploaded*/
   
-  {document.getElementById("imageUpload").style.display="block";}
+  {document.getElementById("imageUpload").style.display="block";
+  document.getElementById("whiteBox").style.display="flex"
+}
 
   imageUpload.addEventListener('change', async () => {
     
@@ -167,7 +170,9 @@ async function start() {
       var cell2 = row1.insertCell(0);
       var cell3 = row2.insertCell(0);
 
-      cell1.innerHTML = "Name found in the records is " +  name;
+      cell1.innerHTML = "Name : " +  name;
+      cell2.innerHTML = "Crime History: " +  "YES";
+
       
       
     
@@ -187,7 +192,8 @@ async function start() {
         var cell2 = row1.insertCell(0);
         var cell3 = row2.insertCell(0);
   
-        cell1.innerHTML = "Face not found in our records" ;
+        cell1.innerHTML = "Face not found in our records" 
+        cell2.innerHTML = "Crime History: " +  "NO";
 
 
 
