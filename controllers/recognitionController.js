@@ -5,10 +5,7 @@ module.exports = function(app){
         res.render('index');
     });
     
-    //home route
-    app.get('/home',function(req,res){
-        res.render('home');
-    });
+    
 
     //contact route
     app.get('/contact',function(req,res){
