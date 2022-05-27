@@ -104,9 +104,9 @@ async function start() {
 
     canvas = faceapi.createCanvasFromMedia(image)
 
-    //Adding the canvas to UI
+    
 
-    container.append(canvas)
+    
 
     //Resizing the canvas according to image uploaded
 
