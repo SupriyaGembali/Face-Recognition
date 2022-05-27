@@ -13,7 +13,7 @@ This project is being developed for Microsoft Engage 2022 mentorship program. Th
 #### Version Control : <img alt="Git" src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white"/>  
 ####  Frameworks/Libraries : Express , Ejs ,face api.js
 #### Authentication : passportjs
-###### You can also see the list of dependencies in the package.json file.
+
 ## 🚩Installation/Environment Setup 
 
   #### 1. Clone the Website
@@ -58,7 +58,7 @@ This project is being developed for Microsoft Engage 2022 mentorship program. Th
   - It cannot be used for a group photo
   - This website works only for some set of images which are labeled earlier.
   - Please use test images provided in git repo for testing my website so as to check results for known faces 
-  - 
+  
 
 NOTE: Use pc for best experience
 
@@ -82,9 +82,10 @@ NOTE: Use pc for best experience
   3. Start the server
   
      ```
-     nodemon app
+     nodemon app 
      
-     ```
+     ``` 
+  4.Visit localhost:3000
 
 
 #### If you like it please give it a star!! ⭐
