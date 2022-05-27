@@ -18,10 +18,12 @@ const session = require('express-session');
 const passport = require('passport');
 require('./auth');
 
-
+var userName
 //Login Checker for authentication
 function isLoggedIn(req, res, next) {
-  req.user ? next() : res.sendStatus(401);
+  if(req.user){ userName = req.user.displayName;
+     next()}
+  else{ res.sendStatus(401)};
 }
 
 app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
@@ -40,11 +42,21 @@ app.get('/auth/google',
 
 app.get( '/auth/google/callback',
   passport.authenticate( 'google', {
-    successRedirect: '/home',
+    successRedirect: '/home' ,
     failureRedirect: '/auth/google/failure'
   })
 );
 
+app.get('/home',function(req,res){
+  try{
+  res.render('home',{name: req.user.displayName});
+  }
+
+  catch(err)
+  {
+    res.render('ErrorPage');
+  }
+});
 //Path for protected route which allow access to index page
 app.get('/protected', isLoggedIn, (req, res) => {
   res.render('index');
