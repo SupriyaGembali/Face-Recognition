@@ -85,7 +85,12 @@ NOTE: Use pc for best experience
      nodemon app 
      
      ``` 
-  4.Visit localhost:3000
+  3. Run server
+  
+     ```
+     localhost:3000
+     
+     ``` 
 
 
 #### If you like it please give it a star!! ⭐
