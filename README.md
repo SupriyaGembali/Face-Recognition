@@ -56,7 +56,9 @@ This project is being developed for Microsoft Engage 2022 mentorship program. Th
 
 ## Restrictions:
   - It cannot be used for a group photo
-  - This website works only for some set of images which are labeled before.
+  - This website works only for some set of images which are labeled earlier.
+  - Please use test images provided in git repo for testing my website so as to check results for known faces 
+  - 
 
 NOTE: Use pc for best experience
 
