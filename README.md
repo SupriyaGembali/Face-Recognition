@@ -88,7 +88,7 @@ NOTE: Use pc for best experience
   3. Run server
   
      ```
-     localhost:3000
+     http://localhost:3000/
      
      ``` 
 
