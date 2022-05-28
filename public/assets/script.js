@@ -212,7 +212,7 @@ function loadLabeledImages() {
   in labled_images folder into an array "lables"
   To add a new face , Enter the new person's 
   name in this array and His/her face in labled_images Folder*/
-  const labels = ['Gopi', 'Hema', 'Pranay', 'Pujitha', 'Siddharth', 'Jashwanth', 'Kiran']
+  const labels = ['Gopi', 'Hema', 'Pranay', 'Shreya', 'Siddharth', 'Anjali', 'Kiran']
 
   //Label Images According to Their Names 
 
