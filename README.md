@@ -24,7 +24,7 @@ NOTE: PLEASE KINDLY MAKE SURE YOU ARE BROWSING THIS WEBSITE ON GOOGLE CHROME
 ## Features:
   - Home page to access different sections of the website
   - Google authntication to ensure safety
-  - once signed in you can upload n number of images one by one to crosscheck with previous police records
+  - once signed in you can upload many images one by one to crosscheck with previous police records
   - If found in recorde it retrieves the data regarding the image uploaded like name,criminal history 
   - It face uploaded is unknown it retrieves the data accordingly 
   - It can be used by police for faster access of their records 
