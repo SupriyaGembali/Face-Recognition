@@ -46,9 +46,9 @@ NOTE: Use pc for best experience
      ```
 
   2. Move to the project directory Face-Recognition and Install required dependencies
-
+  
      ```
-    npm install 
+      npm install 
      
      ```
   3. Install dependencies requied for authentication too
