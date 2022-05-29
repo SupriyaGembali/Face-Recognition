@@ -4,6 +4,9 @@
 
 This project is being developed for Microsoft Engage 2022 mentorship program. This is a Website for Face Recognition.
 
+It is currently hosted on heroku.
+
+Website url: <a href = "https://engagehs22supriya.herokuapp.com/" target = "_blank">https://engagehs22supriya.herokuapp.com/</a>
 
 
 
@@ -42,14 +45,13 @@ NOTE: Use pc for best experience
      
      ```
 
-  2.Move to the project directory Face-Recognition , Install required dependencies
+  2. Move to the project directory Face-Recognition , Install required dependencies
 
      ```
     npm install 
      
      ```
-   3.Install dependencies requied for authentication too
-   
+  3. Install dependencies requied for authentication too
    
      ```
      npm i --save express express-session passport passport-google-oauth2
