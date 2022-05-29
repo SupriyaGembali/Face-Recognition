@@ -27,14 +27,14 @@ NOTE: PLEASE KINDLY MAKE SURE YOU ARE BROWSING THIS WEBSITE ON GOOGLE CHROME
   - once signed in you can upload many images one by one to crosscheck with previous police records
   - If found in records it retrieves the data regarding the image uploaded like name,criminal history 
   - If face uploaded is unknown it retrieves the data accordingly 
-  - It can be used by police for faster access of their records 
+ 
   
 
 ## Restrictions:
   - Please browse the hosted link in GOOGLE CHROME BROWSER
   - It cannot be used for a group photo
   - This website recognises only for some set of images which are labelled earlier.
-  - Please use test images provided in git repo for testing my website so as to check results for known faces 
+  - Please use the test images provided in git repo for testing my website so as to check results for known faces 
   
 
 NOTE: Use pc for best experience
