@@ -6,7 +6,9 @@ This project is being developed for Microsoft Engage 2022 mentorship program. Th
 
 It is currently hosted on heroku.
 
-Website url: <a href = "https://engagehs22supriya.herokuapp.com/" target = "_blank">https://engagehs22supriya.herokuapp.com/</a>
+Website url: <a href = "https://engagehs22supriya.herokuapp.com/" target = "_blank">https://engagehs22supriya.herokuapp.com/</a> 
+
+NOTE: PLEASE KINDLY MAKE SURE YOU ARE BROWSING THIS WEBSITE ON GOOGLE CHROME
 
 
 
