@@ -26,6 +26,7 @@ This project is being developed for Microsoft Engage 2022 mentorship program. Th
   
 
 ## Restrictions:
+  - Please browse the hosted link in google.com
   - It cannot be used for a group photo
   - This website works only for some set of images which are labeled earlier.
   - Please use test images provided in git repo for testing my website so as to check results for known faces 
@@ -41,11 +42,16 @@ NOTE: Use pc for best experience
      
      ```
 
-  2. Install all dependencies
+  2.Move to the project directory Face-Recognition , Install required dependencies
 
      ```
-     npm install 
+    npm install 
      
+     ```
+   3.Install dependencies requied for authentication too
+   
+   
+     ```
      npm i --save express express-session passport passport-google-oauth2
      
      ```
