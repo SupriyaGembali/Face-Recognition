@@ -33,7 +33,7 @@ NOTE: PLEASE KINDLY MAKE SURE YOU ARE BROWSING THIS WEBSITE ON GOOGLE CHROME
 ## Restrictions:
   - Please browse the hosted link in GOOGLE CHROME BROWSER
   - It cannot be used for a group photo
-  - This website works only for some set of images which are labeled earlier.
+  - This website recognises only for some set of images which are labeled earlier.
   - Please use test images provided in git repo for testing my website so as to check results for known faces 
   
 
