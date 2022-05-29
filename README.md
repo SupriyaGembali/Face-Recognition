@@ -26,7 +26,7 @@ This project is being developed for Microsoft Engage 2022 mentorship program. Th
   
 
 ## Restrictions:
-  - Please browse the hosted link in google.com
+  - Please browse the hosted link in GOOGLE CHROME BROWSER
   - It cannot be used for a group photo
   - This website works only for some set of images which are labeled earlier.
   - Please use test images provided in git repo for testing my website so as to check results for known faces 
